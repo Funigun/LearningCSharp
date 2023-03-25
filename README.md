@@ -1,1 +1,1 @@
-# C# demo console application to concrete classes.
+# C# demo console application to practice concrete classes.
