@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace TypeSystemDemoLibrary
 {
-    public static class Workflows
+    internal static class Workflows
     {
-        public static void ValueTypeWorkflow()
+        internal static void ValueTypeWorkflow()
         {
             int a = 5;
             int b = a; // Copying value of variable "a" to variable "b"
@@ -37,7 +37,7 @@ namespace TypeSystemDemoLibrary
             return a + b;
         }
 
-        public static void ReferenceTypeWorkflow()
+        internal static void ReferenceTypeWorkflow()
         {
             Employee employee1 = new Employee("Patryk", "Dev");
             Employee employee2 = employee1; // Copying reference from variable "employee1" to variable "employee2"
