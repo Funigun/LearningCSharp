@@ -8,9 +8,9 @@ using System.Threading.Tasks;
 
 namespace ConcreteClassDemoLibrary
 {
-    public static class Workflows
+    internal static class Workflows
     {
-        public static void ClassOverviewWorkflow()
+        internal static void ClassOverviewWorkflow()
         {
             // Instantiating an object
             Employee employee = new Employee("Patryk");
@@ -25,7 +25,7 @@ namespace ConcreteClassDemoLibrary
             employee.FinishWork();
         }
 
-        public static void ClassInheritanceWorkflow()
+        internal static void ClassInheritanceWorkflow()
         {
             // Creating List of Employee objects, this is possibla, because
             // Manager and Regular Employee inherit from Employee class
@@ -57,7 +57,7 @@ namespace ConcreteClassDemoLibrary
             }
         }
 
-        public static void OperationsOrderWorkflow()
+        internal static void OperationsOrderWorkflow()
         {
             Console.WriteLine("Calling \"Manager(string name) : base(name, \"Manager\")\" constructor.\n");
             

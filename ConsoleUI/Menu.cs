@@ -1,5 +1,7 @@
 ﻿using TypeSystemDemo = TypeSystemDemoLibrary;
 using ConcreteClass = ConcreteClassDemoLibrary;
+using AbstractClass = AbstractClassDemoLibrary;
+
 
 namespace ConsoleUI
 {
@@ -29,6 +31,13 @@ namespace ConsoleUI
                 { 0, "0 - Close application" },                
                 { 1, "1 - Type System Demo" },
                 { 2, "2 - Concrete Class Demo" },
+                { 3, "3 - Abstract Class Demo" }
+                //{ 4, "4 - Interfaces Demo" }
+                //{ 5, "5 - Delegates Demo" }
+                //{ 6, "6 - Events Demo" }
+                //{ 7, "7 - Generics Demo" }
+                //{ 8, "8 - Structs Demo" }
+                //{ 9, "9 - Records Demo" }
             };
         }
 
@@ -38,7 +47,15 @@ namespace ConsoleUI
             return new Dictionary<int, Dictionary<int, string>>()
             {
                 { 1, TypeSystemDemo.Menu.MenuList },
-                { 2, ConcreteClass.Menu.MenuList }
+                { 2, ConcreteClass.Menu.MenuList },
+                { 3, AbstractClass.Menu.MenuList }
+
+                //{ 4, Interfaces.Menu.MenuList }
+                //{ 5, Delegates.Menu.MenuList }
+                //{ 6, Events.Menu.MenuList }
+                //{ 7, Generics.Menu.MenuList }
+                //{ 8, Structs.Menu.MenuList }
+                //{ 9, Records.Menu.MenuList }
             };
         }
         
@@ -48,7 +65,15 @@ namespace ConsoleUI
             return new Dictionary<int, Dictionary<int, Action>>
             {
                 { 1, TypeSystemDemo.Menu.MenuActions },
-                { 2, ConcreteClass.Menu.MenuActions }
+                { 2, ConcreteClass.Menu.MenuActions },
+                { 3, AbstractClass.Menu.MenuActions }
+
+                //{ 4, Interfaces.Menu.MenuActions }
+                //{ 5, Delegates.Menu.MenuActions }
+                //{ 6, Events.Menu.MenuActions }
+                //{ 7, Generics.Menu.MenuActions }
+                //{ 8, Structs.Menu.MenuActions }
+                //{ 9, Records.Menu.MenuActions }
             };
         }
 
