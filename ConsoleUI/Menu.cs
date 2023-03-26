@@ -1,4 +1,5 @@
 ﻿using TypeSystemDemo = TypeSystemDemoLibrary;
+using ConcreteClass = ConcreteClassDemoLibrary;
 
 namespace ConsoleUI
 {
@@ -6,11 +7,14 @@ namespace ConsoleUI
     {
         private Dictionary<int, string> _items;
 
+        private Dictionary<int, Action> _actions;
+
         private sbyte _selectedView = -1;
 
         internal Menu()
         {
             _items = SetMenuItems();
+            _actions = SetActions();
         }
 
         private Dictionary<int, string> SetMenuItems()
@@ -18,8 +22,26 @@ namespace ConsoleUI
             return new Dictionary<int, string>()
             {
                 { 0, "0 - Close application" },
+                
                 { 1, "1 - Type System Demo - Value Types" },
-                { 2, "2 - Type System Demo - Reference Types" }
+                { 2, "2 - Type System Demo - Reference Types" },
+
+                { 3, "3 - Concrete Class Demo - Overview" },
+                { 4, "4 - Concrete Class Demo - Inheritance" },
+                { 5, "5 - Concrete Class Demo - Operations order" }
+            };
+        }
+
+        private Dictionary<int, Action> SetActions()
+        {
+            return new Dictionary<int, Action>
+            {
+                { 1, TypeSystemDemo.Workflows.ValueTypeWorkflow },
+                { 2, TypeSystemDemo.Workflows.ReferenceTypeWorkflow },
+
+                { 3, ConcreteClass.Workflows.ClassOverviewWorkflow },
+                { 4, ConcreteClass.Workflows.ClassInheritanceWorkflow },
+                { 5, ConcreteClass.Workflows.OperationsOrderWorkflow },
             };
         }
 
@@ -74,18 +96,7 @@ namespace ConsoleUI
             while (_selectedView == -1);
         }
 
-        private void ShowView()
-        {
-            switch (_selectedView)
-            {
-                case 1: 
-                    TypeSystemDemo.Workflows.ValueTypeWorkflow(); 
-                    break;
-
-                case 2:
-                    TypeSystemDemo.Workflows.ReferenceTypeWorkflow();
-                    break;
-            }
-        }
+        private void ShowView() => _actions[_selectedView].Invoke();
+        
     }
 }
